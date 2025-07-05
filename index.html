@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart 3D Converter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Calculator Section -->
+  <div class="section">
+    <h1>3D Calculator</h1>
+    <div class="display" id="display">0</div>
+    <div class="buttons">
+      <button onclick="clearDisplay()">AC</button>
+      <button onclick="append('(')">(</button>
+      <button onclick="append(')')">)</button>
+      <button onclick="append('/')">÷</button>
+
+      <button onclick="append('7')">7</button>
+      <button onclick="append('8')">8</button>
+      <button onclick="append('9')">9</button>
+      <button onclick="append('*')">×</button>
+
+      <button onclick="append('4')">4</button>
+      <button onclick="append('5')">5</button>
+      <button onclick="append('6')">6</button>
+      <button onclick="append('-')">−</button>
+
+      <button onclick="append('1')">1</button>
+      <button onclick="append('2')">2</button>
+      <button onclick="append('3')">3</button>
+      <button onclick="append('+')">+</button>
+
+      <button onclick="append('0')">0</button>
+      <button onclick="append('.')">.</button>
+      <button onclick="calculate()">=</button>
+      <button onclick="append('**')">^</button>
+    </div>
+  </div>
+
+  <!-- Number Converter -->
+  <div class="section">
+    <h1>Number Converter</h1>
+    <label for="inputBase">Choose Input Base:</label>
+    <select id="inputBase">
+      <option value="2">Binary</option>
+      <option value="10" selected>Decimal</option>
+      <option value="8">Octal</option>
+      <option value="16">Hexadecimal</option>
+    </select>
+
+    <input type="text" id="inputValue" placeholder="Enter your number" />
+    <button onclick="convert()">Convert</button>
+
+    <div class="output">
+      <p><strong>Binary:</strong> <span id="bin"></span></p>
+      <p><strong>Decimal:</strong> <span id="dec"></span></p>
+      <p><strong>Octal:</strong> <span id="oct"></span></p>
+      <p><strong>Hexadecimal:</strong> <span id="hex"></span></p>
+    </div>
+  </div>
+
+  <!-- Text Converter -->
+  <div class="section">
+    <h1>Text to Binary/Decimal/Hex</h1>
+    <textarea id="textInput" placeholder="Enter text..."></textarea>
+    <button onclick="convertText()">Convert Text</button>
+
+    <div class="output">
+      <p><strong>Binary:</strong> <span id="textBin"></span></p>
+      <p><strong>Decimal:</strong> <span id="textDec"></span></p>
+      <p><strong>Hexadecimal:</strong> <span id="textHex"></span></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
